@@ -1,0 +1,51 @@
+Some programs and other stuff you need for the current i3 config
+
+(lembrar que a documentation no website do i3 é bastante útil)
+
+(o ficheiro config do i3 costuma estar em ~/.config)
+
+
+feh - para o wallpaper
+
+ttf-font-awesome - para os ícones
+
+rofi - para substituir o dmenu (rofi themes can be found in /usr/share/rofi/themes and are .rasi files)
+    > nord.rasi é o tema atual (https://github.com/undiabler/nord-rofi-theme) - selecionar o tema com o comando "rofi-theme-selector" num terminal
+
+i3blocks - para substituir a i3status bar
+    > os blocklets estão na pasta ~/.config/i3blocks_scripts (não esquecer adicionar a permissão de executar (sudo chmod +x <file>) aos scripts) e o i3blocks.conf está na pasta /etc 
+    > o ficheiro i3status.conf também está na pasta /etc
+
+(muitos dos blocklets em uso estão em https://github.com/vivien/i3blocks-contrib)
+
+acpi - para o blocklet da bateria
+
+arch-based distro - para o blocklet do Arch Updates
+python3 - para o blocklet do Arch Updates
+pacman-contrib - para o blocklet do Arch Updates
+
+pulseaudio-alsa - para o blocklet do volume
+pulseaudio-bluetooth - para o blocklet do volume
+pulseaudio-equalizer - para o blocklet do volume
+pulseaudio-jack - para o blocklet do volume
+alsa-utils - para o blocklet do volume
+
+i3lock-color - para pôr cores ou fotos no i3lockscreen (é preciso remover o i3lock pois ficam em conflito)
+
+i3lock-color script em uso (fui buscar a https://github.com/Raymo111/i3lock-color/blob/master/examples/lock.sh)
+
+autoconf - para o i3lock-color em arch linux
+cairo - para o i3lock-color em arch linux
+fontconfig - para o i3lock-color em arch linux
+gcc - para o i3lock-color em arch linux
+libev - para o i3lock-color em arch linux
+libjpeg-turbo - para o i3lock-color em arch linux
+libxinerama - para o i3lock-color em arch linux
+libxkbcommon-x11 - para o i3lock-color em arch linux
+libxrandr - para o i3lock-color em arch linux
+pam - para o i3lock-color em arch linux
+pkgconf - para o i3lock-color em arch linux
+xcb-util-image - para o i3lock-color em arch linux
+xcb-util-xrm - para o i3lock-color em arch linux
+
+
