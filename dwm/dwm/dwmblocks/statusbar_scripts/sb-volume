@@ -36,4 +36,4 @@ case 1 in
 	* ) echo 🔇 && exit ;;
 esac
 
-echo "$icon$vol%"
+echo "^c#000000^^b#d6c8f1^$icon$vol%"
