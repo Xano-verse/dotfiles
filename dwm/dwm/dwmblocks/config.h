@@ -20,11 +20,12 @@ static const Block blocks[] = {
 	/* {"",	"sb-mailbox",	180,	12}, */
 	{"",	"sb-internet",	5,	4},
 	{"",	"sb-nettraf",	1,	16},
-	{"",	"sb-volume",	0,	10},
+	{"",	"sb-volume",	1,	0},
 	{"",	"sb-battery",	5,	3},
-	/* {"",	"echo \" \"",	0,	0}, */
+	/* {"",	"echo \"^c#000000^^b#f7c994^ [\"",	0,	0}, */
 	{"",	"sb-clock",	1,	1},
-	/* {"",	"date \"+%a\"",	0,	0},  */
+	{"",	"date \"+%a\"",	0,	0}, 
+	/* {"",	"echo \"]\"",	0,	0}, */
 	/* {"",	"sb-iplocate", 0,	27}, */
 	/* {"",	"sb-help-icon",	0,	15}, */
 };
