@@ -75,7 +75,8 @@ static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", "unmut
 static const char *brdowncmd[] = { "light", "-U", "5", NULL };
 static const char *brupcmd[] = { "light", "-A", "5", NULL };
 static const char *broffcmd[] = { "xset", "dpms", "force", "suspend", NULL};
-
+//Opacity
+static const char *opactogglecmd[] = { "picom-trans", "-c", "-t", NULL};  
 
 #include "movestack.c"
 
@@ -90,8 +91,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Right,  movestack,      {.i = -1 } },
 	{ MODKEY,                       XK_o,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_p,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ControlMask,           XK_Left,   setmfact,       {.f = -0.05} },
+	{ MODKEY|ControlMask,		XK_Right,  setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,		XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_w,      killclient,     {0} },
@@ -118,6 +119,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_F4,     spawn,          {.v = brdowncmd } },
 	{ MODKEY,			XK_F5,     spawn,          {.v = brupcmd } },
 	{ MODKEY,			XK_F6,     spawn,          {.v = broffcmd } },
+	{ MODKEY,			XK_F7,     spawn,          {.v = opactogglecmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
