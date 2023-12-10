@@ -74,6 +74,7 @@ static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", "unmut
 //Brightness
 static const char *brdowncmd[] = { "light", "-U", "5", NULL };
 static const char *brupcmd[] = { "light", "-A", "5", NULL };
+static const char *broffcmd[] = { "xset", "dpms", "force", "suspend", NULL};
 
 
 #include "movestack.c"
@@ -116,6 +117,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_F3,     spawn,          {.v = volupcmd } },
 	{ MODKEY,			XK_F4,     spawn,          {.v = brdowncmd } },
 	{ MODKEY,			XK_F5,     spawn,          {.v = brupcmd } },
+	{ MODKEY,			XK_F6,     spawn,          {.v = broffcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
