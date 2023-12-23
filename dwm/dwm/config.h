@@ -118,7 +118,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_F3,     spawn,          {.v = volupcmd } },
 	{ MODKEY,			XK_F4,     spawn,          {.v = brdowncmd } },
 	{ MODKEY,			XK_F5,     spawn,          {.v = brupcmd } },
-	{ MODKEY,			XK_F6,     spawn,          {.v = broffcmd } },
+	{ NULL,				XK_F6,     spawn,          {.v = broffcmd } },
 	{ MODKEY,			XK_F7,     spawn,          {.v = opactogglecmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
