@@ -67,10 +67,14 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *roficmd[] = { "rofi", "-show", "drun", "-show-icons", NULL };
 static const char *termcmd[]  = { "konsole", NULL };
+
 //Volume
 static const char *mutecmd[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
-static const char *voldowncmd[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
-static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
+static const char *voldowncmd[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL, "pkill", "-RTMIN+10", "dwmblocks", NULL };
+static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL, "pkill", "-RTMIN+10", "dwmblocks", NULL };
+static const char *updatevol[] = { "pkill", "-RTMIN+10", "dwmblocks", NULL };
+
+
 //Brightness
 static const char *brdowncmd[] = { "light", "-U", "5", NULL };
 static const char *brupcmd[] = { "light", "-A", "5", NULL };
@@ -114,8 +118,11 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_plus,   setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = 0  } },
 	{ MODKEY,			XK_F1,     spawn,          {.v = mutecmd } },
+	{ MODKEY,			XK_F1,     spawn,          {.v = updatevol } },
 	{ MODKEY,			XK_F2,     spawn,          {.v = voldowncmd } },
+	{ MODKEY,			XK_F2,     spawn,          {.v = updatevol } },
 	{ MODKEY,			XK_F3,     spawn,          {.v = volupcmd } },
+	{ MODKEY,			XK_F3,     spawn,          {.v = updatevol } },
 	{ MODKEY,			XK_F4,     spawn,          {.v = brdowncmd } },
 	{ MODKEY,			XK_F5,     spawn,          {.v = brupcmd } },
 	{ NULL,				XK_F6,     spawn,          {.v = broffcmd } },
