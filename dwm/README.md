@@ -2,40 +2,20 @@
 
 ## File structure
 
-dwm  
-├── custom-scripts  
-│   └── \> scripts for keybindings or other things  
-│  
-├── dotdwm  
-│   └── \> equivalent of ~/.dwm folder, has autostart script  
-│  
-└── dwm  
-    ├── \> the main dwm folder  
-    │  
-    ├── patches  
-    └─dwmblocks  
-      ├── patches  
-      ├── statusbar\_scripts  
-      │   └── \> the shell scripts for the statusbar  
-      └── \> the dwmblocks patch for the bar    
-
-* dwm
-    * custom-scripts
-        scripts for keybindings or other things
+* custom-scripts  
+scripts for keybindings or other things  
     
-    * dotdwm
-        equivalent of ~/.dwm folder, has autostart script
+* dotdwm  
+equivalent of ~/.dwm folder, has autostart script  
 
-    * dwm
-        the main dwm folder
+* dwm  
+the main dwm folder  
 
-        * patches
+    * patches  
+    * dwmblocks  
+    the dwmblocks patch for the bar  
+
+        * patches  
+        * statusbar_scripts  
+        the shell scripts for the statusbar
         
-        * dwmblocks
-            
-            * patches
-            
-            * statusbar_scripts
-                the shell scripts for the statusbar
-        
-        * the dwmblocks patch for the bar
