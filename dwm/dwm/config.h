@@ -78,7 +78,11 @@ static const char *updatevol[] = { "pkill", "-RTMIN+10", "dwmblocks", NULL };
 //Brightness
 static const char *brdowncmd[] = { "light", "-U", "5", NULL };
 static const char *brupcmd[] = { "light", "-A", "5", NULL };
-static const char *broffcmd[] = { "xset", "dpms", "force", "suspend", NULL};
+static const char *broffcmd[] = { "xset", "dpms", "force", "suspend", NULL };
+
+//this is a custom script present in /usr/local/bin
+static const char *keyboardbrtogcmd[] = { "keyboard-brightness-toggle", NULL };
+
 //Opacity
 static const char *opactogglecmd[] = { "picom-trans", "-c", "-t", NULL};  
 
@@ -126,7 +130,8 @@ static const Key keys[] = {
 	{ MODKEY,			XK_F4,     spawn,          {.v = brdowncmd } },
 	{ MODKEY,			XK_F5,     spawn,          {.v = brupcmd } },
 	{ NULL,				XK_F6,     spawn,          {.v = broffcmd } },
-	{ MODKEY,			XK_F7,     spawn,          {.v = opactogglecmd } },
+	{ MODKEY,			XK_F7,     spawn,          {.v = keyboardbrtogcmd } },
+	{ MODKEY,			XK_F8,     spawn,          {.v = opactogglecmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
