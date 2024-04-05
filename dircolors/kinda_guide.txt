@@ -1,0 +1,47 @@
+!!! quando se muda a variavel, as mudancas só são aplicadas para o terminal em que mudei a variável
+adicionar ao bashrc ou zshrc ou equivalente para fazer a mudanca sempre que comecarmos uma nova terminal session
+
+
+dircolors.txt currently guardado em $HOME/.config
+
+
+
+Yes, using the LS_COLORS variable (assuming GNU ls). The easiest way to manipulate that is to use dircolors:
+
+dircolors --print-database > dircolors.txt
+
+will dump the current settings to dircolors.txt, which you can then edit; once you've added your settings,
+
+eval $(dircolors dircolors.txt)
+
+will update LS_COLORS and export it. You should add that to your shell startup script.
+
+To apply the example settings you give, the entries to add to dircolors.txt would be
+
+.txt 00;31
+.text 00;34
+.secret 00;32
+
+
+
+from here https://unix.stackexchange.com/questions/322029/how-to-change-the-color-of-different-files-in-ls
+
+
+
+
+also see
+https://www.howtogeek.com/307899/how-to-change-the-colors-of-directories-and-files-in-the-ls-command/
+
+and
+https://unix.stackexchange.com/questions/94299/dircolors-modify-color-settings-globaly
+^from here, IMPORTANT TO NOTE
+
+dircolors (short for Directory Colors) can't be used to modify colors globally. To do that, you probably want to be adjusting the color palette in your terminal emulator.
+
+For instance, dircolors is not used to adjust the colors requested by grep, vi, tmux, or man.
+
+dircolors is used to adjust the colors that the commands ls and tree request to be displayed when displaying your filenames.
+
+>>>>>>>>>> I stress request to be displayed, because the colors a command requests are only what is sent to your terminal emulator. Your terminal emulator can then choose to display different colors than those requested. What are requested, and what are finally output to your terminal screen that you'll see, can be two different sets of colors. <<<<<<<<<<<< THIS
+
+as cores do terminal e do sistema vão mudar e é preciso ter essas em conta também!!!
