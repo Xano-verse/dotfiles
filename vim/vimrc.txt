@@ -15,3 +15,10 @@ noremap! <C-h> <C-w>
 
 set foldmethod=syntax
 set foldlevel=999
+
+
+call plug#begin()
+
+Plug 'henry-hsieh/riscv-asm-vim'
+
+call plug#end()
