@@ -16,16 +16,16 @@ Backup of my config and similar files
 
 | Distro       | Date               |
 |--------------|--------------------|
-| Linux Lite   |                    |
-| Archcraft    |                    |
+| Linux Lite   | 02/2021 - 07/2021  |
+| Archcraft    | 07/2021 - 09/2023  |
 | Debian       | 09/2023 - Present  |
 
 
 
 | WM / DE      | Date               |
 |--------------|--------------------|
-| xfce         |                    |
-| KDE Plasma   |                    |
-| i3wm         |                    |
+| xfce         | 02/2021 - 03/2021  |
+| i3wm         | 02/2021 - 09/2023  |
+| KDE Plasma   | 03/2021 - Present  |
 | qtile        | 09/2023 - 11/2023  |
 | dwm          | 11/2023 - Present  |
