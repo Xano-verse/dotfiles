@@ -34,9 +34,11 @@ for battery in /sys/class/power_supply/BAT?*; do
 	[ "$status" = "🔋" ] && [ "$capacity" -le 25 ] && warn="❗"
 
 
-	# Checks if battery is below 10%, prints with red background color
+	# Checks if battery is below 10%, sends notification and prints with red background color
 	if [ "$capacity" -le 10 ]; then
-    		printf "^c#000000^^b#ff0000^ %s%s[%d%%]" "$status" "$warn" "$capacity"; unset warn  
+    		notify-send -u critical "LOW BATTERY" "please charge computer"
+		printf "^c#000000^^b#ff0000^ %s%s[%d%%]" "$status" "$warn" "$capacity"; unset warn  
+	
 	# If not, prints normalmente
 	else
 		printf "^c#000000^^b#f7c9ad^ %s%s[%d%%]" "$status" "$warn" "$capacity"; unset warn
