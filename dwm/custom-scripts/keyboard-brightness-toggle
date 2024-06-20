@@ -1,6 +1,0 @@
-#!/bin/bash
-if [ $(cat /sys/class/leds/asus::kbd_backlight/brightness) -eq 0 ]; then
-	echo 100 > /sys/class/leds/asus::kbd_backlight/brightness
-else
-	echo 0 > /sys/class/leds/asus::kbd_backlight/brightness
-fi
