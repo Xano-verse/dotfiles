@@ -1,12 +1,26 @@
-neofetch --ascii Imagens/ascii/portal1_ascii.txt
+setxkbmap -layout pt
 
+#apply dircolors changes to the ls command
+eval $(dircolors ~/.config/dircolors.txt)
+
+#useful starting path
+cd ~/Documents/SideQuests/SecurityTeam@Tecnico/BinaryExploitation\ Bootcamp\ -\ Verao2024/
+
+#add rust/cargo programs to $PATH
+path+=('/home/xanodeb/.cargo/bin')
+export PATH
+
+#neofetch --ascii Imagens/ascii/portal1_ascii.txt
 #neofetch
+
+#neofetch custom scripts like distrofetch located in ~/.local/bin
+distrofetch
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/linuxxxano/.oh-my-zsh"
+export ZSH="/home/xanodeb/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -103,4 +117,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+# Created by `pipx` on 2023-10-05 09:01:48
+export PATH="$PATH:/home/xanodeb/.local/bin"
+
 
