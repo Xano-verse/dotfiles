@@ -4,10 +4,13 @@ setxkbmap -layout pt
 eval $(dircolors ~/.config/dircolors.txt)
 
 #useful starting path
-cd ~/Documents/SideQuests/SecurityTeam@Tecnico/BinaryExploitation\ Bootcamp\ -\ Verao2024/
+#cd ~/Documents/Ano\ Letivo\ 2024-25/1o\ Semestre/
 
+#Add folders with binaries to $PATH
 #add rust/cargo programs to $PATH
 path+=('/home/xanodeb/.cargo/bin')
+#
+path+=('/home/xanodeb/apache-maven-3.9.8/bin')
 export PATH
 
 #neofetch --ascii Imagens/ascii/portal1_ascii.txt
@@ -15,6 +18,40 @@ export PATH
 
 #neofetch custom scripts like distrofetch located in ~/.local/bin
 distrofetch
+
+
+#################################################################
+#Script to set starting path
+ROXO='[35m'
+
+echo "$ROXO"
+echo "Where to?"
+echo "1 - Home"
+echo "2 - University"
+echo "3 - Work"
+echo "4 - Projects"
+read where
+
+
+if [ $where -eq 1 ]
+then
+	cd ~/
+
+elif [ $where -eq 2 ]
+then
+	cd ~/Documents/Ano\ Letivo\ 2024-25/1o\ Semestre/
+
+elif [$where -eq 3 ]
+then
+	cd ~/Documents/SideQuests/Work
+
+elif [$where -eq 4 ]
+then
+	cd ~/Documents/SideQuests/MyProjects/
+
+fi
+#################################################################
+
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -123,3 +160,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:/home/xanodeb/.local/bin"
 
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
