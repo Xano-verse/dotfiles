@@ -41,11 +41,11 @@ elif [ $where -eq 2 ]
 then
 	cd ~/Documents/Ano\ Letivo\ 2024-25/1o\ Semestre/
 
-elif [$where -eq 3 ]
+elif [ $where -eq 3 ]
 then
 	cd ~/Documents/SideQuests/Work
 
-elif [$where -eq 4 ]
+elif [ $where -eq 4 ]
 then
 	cd ~/Documents/SideQuests/MyProjects/
 
