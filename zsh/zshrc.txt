@@ -1,5 +1,10 @@
 setxkbmap -layout pt
 
+#ctrl + backspace deletes whole word before cursor
+bindkey '^H' backward-kill-word
+#ctrl + delete deletes whole word after cursor
+bindkey '5~' kill-word
+
 #apply dircolors changes to the ls command
 eval $(dircolors ~/.config/dircolors.txt)
 
