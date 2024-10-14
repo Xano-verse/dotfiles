@@ -5,8 +5,9 @@
 # set by alacritty itself.
 
 import:
- - ~/.config/alacritty/themes/themes/inferno.yaml
-
+  # - ~/.config/alacritty/themes/themes/inferno.yaml
+   - ~/.config/alacritty/themes/themes/smoooooth.yaml
+     
 env:
   # TERM variable
   #
