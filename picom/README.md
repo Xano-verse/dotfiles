@@ -4,3 +4,7 @@ The regular picom can be found [here - picom by yshui](https://github.com/yshui/
 
 The binaries should be placed in /usr/local/bin/
 
+picom.conf goes in ~/.config/picom/
+
+Currently the picom binary from fdev31 is being used with the picom.conf
+
