@@ -1,4 +1,5 @@
 # zsh
 
-.zshrc goes in ~/   ($HOME)
+.zshrc goes in ~/ 
+(aka $HOME)
 
