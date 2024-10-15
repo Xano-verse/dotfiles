@@ -15,3 +15,9 @@ Type=XSession
 ```
 
 
+To make other dwm instances:
+- change the Makefile (compare to see where to change the name)
+- criar um .dwm novo com o novo nome para ter o próprio script de autostart
+- no dwm.c mudar a variável dwmdir para o novo nome para depois o autostart detetado ser o certo
+- criar dwmblocks novo com o novo nome e alterar o Makefile dele tb 
+
