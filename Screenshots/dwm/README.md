@@ -1,0 +1,12 @@
+# dwm screenshot dump
+
+
+![](dwm_1.png)
+![](dwm_1_justwallpaper.png) 
+
+---
+
+![](dwm_2.png)
+
+![](dwm_keepClimbing.png)
+
