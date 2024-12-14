@@ -16,6 +16,8 @@ eval $(dircolors ~/.config/dircolors.txt)
 path+=('/home/xanodeb/.cargo/bin')
 #
 path+=('/home/xanodeb/apache-maven-3.9.8/bin')
+# vman plugin for vim to use vim instead of less in man pages, adds vman command
+path+=('/home/xanodeb/.vim/plugged/vim-superman/bin')
 export PATH
 
 #neofetch --ascii Imagens/ascii/portal1_ascii.txt
@@ -72,16 +74,23 @@ export BAT_THEME="OneHalfDark"
 alias fzf='fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"'
 
 # Color coding for man pages
+# 36 is cyan, pink in my current theme's case
+# 35 is mageneta, purple in my current theme's case
 export MANPAGER="less"
 man() {
-    LESS_TERMCAP_md=$'\e[0;36m' \			# 36 is cyan, pink in my current theme's case
+    LESS_TERMCAP_md=$'\e[0;36m' \
     LESS_TERMCAP_me=$'\e[0m' \
     LESS_TERMCAP_se=$'\e[0m' \
-    LESS_TERMCAP_so=$'\e[01;44;31m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
     LESS_TERMCAP_ue=$'\e[0m' \
-    LESS_TERMCAP_us=$'\e[0;35m' \			# 35 is magenta, purple in my current theme's case
+    LESS_TERMCAP_us=$'\e[0;35m' \
     command man "$@"
 }
+
+# If you want to use vim for man pages instead of less (different color coding too)
+# alias man='vman'
+
+
 
 
 # If you come from bash you might have to change your $PATH.
