@@ -22,8 +22,15 @@ export PATH
 #neofetch
 
 #neofetch custom scripts like distrofetch located in ~/.local/bin
-distrofetch
-
+if [ $TERM = "alacritty" ]
+then
+	navifetch
+elif [ $TERM = "xterm" ]
+then
+	hyfetch
+else
+	distrofetch
+fi
 
 #################################################################
 #Script to set starting path
@@ -48,7 +55,7 @@ then
 
 elif [ $where -eq 3 ]
 then
-	cd ~/Documents/SideQuests/Work
+	cd ~/Documents/SideQuests/HappyCode/
 
 elif [ $where -eq 4 ]
 then
@@ -56,6 +63,25 @@ then
 
 fi
 #################################################################
+
+
+# Batcat theme
+export BAT_THEME="OneHalfDark"
+
+# Use bat (batcat) as a previewer to fzf by default 
+alias fzf='fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"'
+
+# Color coding for man pages
+export MANPAGER="less"
+man() {
+    LESS_TERMCAP_md=$'\e[0;36m' \			# 36 is cyan, pink in my current theme's case
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;31m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[0;35m' \			# 35 is magenta, purple in my current theme's case
+    command man "$@"
+}
 
 
 # If you come from bash you might have to change your $PATH.
