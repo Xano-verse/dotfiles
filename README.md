@@ -6,9 +6,9 @@ Backup of my config and similar files
 ### Current look
 
 
-![](Screenshots/dwm_1.png)
+![](Screenshots/dwm/dwm_1.png)
 
-![](Screenshots/dwm_1_justwallpaper.png)
+![](Screenshots/dwm/dwm_1_justwallpaper.png)
 
 ---
 
