@@ -1,0 +1,108 @@
+2005 </br>
+planning to make a website sooon </br>
+
+
+<img src=https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d29a990a-6738-47cd-8594-eca5af699e8d/dbw55od-12181993-c79a-4fe3-ba67-b4b3ce809983.png/v1/fill/w_432,h_688,strp/bonnie_plush__pixel_art__by_crazycreeper529_dbw55od-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9Njg4IiwicGF0aCI6IlwvZlwvZDI5YTk5MGEtNjczOC00N2NkLTg1OTQtZWNhNWFmNjk5ZThkXC9kYnc1NW9kLTEyMTgxOTkzLWM3OWEtNGZlMy1iYTY3LWI0YjNjZTgwOTk4My5wbmciLCJ3aWR0aCI6Ijw9NDMyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.C4HI4hYDLBncNFYrsvFEYpKICV21v3dcG3Dx64cjkY4 class="bonnie-img"></img>
+
+<style type="text/css">* {cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1258.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2011/03/13/ghost-trio-gengar.html" target="_blank" title="Ghost Trio - Gengar"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Ghost Trio - Gengar" style="position:absolute; top: 0px; right: 0px;" /></a>
+
+<style>
+
+html, body {
+    background-image: url("https://i.pinimg.com/736x/27/9f/b5/279fb5f9c316094760ceb49b1e22f6e8.jpg");
+    /*text-shadow: 0 0 5px #b78495;*/
+
+}
+
+a {
+    color: #ebbeec; /*df78e3;*/
+    text-shadow: 0 0 10px #00a4ff;
+    text-decoration: none; /* no underline */
+}
+
+/* Barra com os links do statuscafe */
+body nav {
+    position: relative;
+    left: 435px;
+    top: 10px;
+    border-style: double;
+    border-color: #ebbeec;
+    border-radius: 10px;
+    background-color: #220933dd;
+    max-width: 400px;
+    text-align: center;
+}
+
+.cols {
+    margin: 0px;
+    color: #ffffff;
+    text-shadow: 0 0 500px #000000;
+    position: relative;
+    top: 20px;
+}
+
+/* Apenas a barra com o perfil */
+.cols section:first-of-type {
+    max-height: 754px;
+}
+
+/* Divisoes perfil e statuses */
+.cols section {
+    background-color: #220933dd;
+    border-style: double;
+    border-color: #ebbeec;
+    border-radius: 10px;
+}
+
+/* Username e "Statuses" title */
+.cols section h2 {
+    color: #ffffff;
+    text-shadow: 0 0 10px #00fdff;
+    position: relative;
+    left: 10px;
+}
+
+/* Subscribe via Atom text */
+.cols section p a {
+    position: relative;
+    left: 10px;
+}
+
+.status-username {
+    position: relative;
+    left: 210px;
+}
+
+
+/* Titulos homepage, email e about */
+div section dl dt{
+    color: #ebbeec;
+    text-shadow: 0 0 10px #00a4ff;
+    position: relative;
+    left: 10px;
+}
+
+/* Link para o email */
+div section dl dd a {
+    color: #ffffff;
+    text-shadow: 0 0 500px #000000;
+    font-weight: normal;
+}
+
+.profile-picture {
+    position: relative;
+    left: 10px;
+    border-style: groove;
+    border-color: black;
+}
+
+.bonnie-img {
+    position: relative;
+    top: 20px;
+    left: 27px;
+    width: 150px;
+    height: auto;
+}
+
+</style>
+
