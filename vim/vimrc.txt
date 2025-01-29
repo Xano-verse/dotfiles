@@ -16,9 +16,13 @@ noremap! <C-h> <C-w>
 set foldmethod=syntax
 set foldlevel=999
 
+set tabstop=4
+set shiftwidth=4
 
 call plug#begin()
 
 Plug 'henry-hsieh/riscv-asm-vim'
+Plug 'jez/vim-superman' 
+Plug 'KabbAmine/vCoolor.vim'
 
 call plug#end()
