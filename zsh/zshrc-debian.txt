@@ -53,7 +53,7 @@ then
 
 elif [ $where -eq 2 ]
 then
-	cd ~/Documents/Ano\ Letivo\ 2024-25/1o\ Semestre/
+	cd ~/Documents/Ano\ Letivo\ 2024-25/2o\ Semestre/
 
 elif [ $where -eq 3 ]
 then
@@ -72,6 +72,15 @@ export BAT_THEME="OneHalfDark"
 
 # Use bat (batcat) as a previewer to fzf by default 
 alias fzf='fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"'
+
+# Use qb for qutebrowser
+alias qb='qutebrowser &;disown'
+
+# Function to act as a command to open vim in a new terminal. Add "exec zsh" if after disown; to make it not kill the terminal after exiting vim
+vimn() {
+	konsole -e vim $1&;disown
+}
+
 
 # Color coding for man pages
 # 36 is cyan, pink in my current theme's case
@@ -204,3 +213,11 @@ export PATH="$PATH:/home/xanodeb/.local/bin"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="/home/xanodeb/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
