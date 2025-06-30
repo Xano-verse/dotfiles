@@ -88,6 +88,16 @@ static const char *keyboardbrtogcmd[] = { "keyboard-brightness-toggle", NULL };
 //Opacity
 static const char *opactogglecmd[] = { "picom-trans", "-c", "-t", NULL};  
 
+//Turn off brightness - monitor specific
+// xset dpms always applie to all displays, for display specific solutions we need other tools. Due to hardware/driver specifications of my current devices neither the external monitor (via ddcutil) or the laptop screen (via light command) can completely turn off the backlight
+//So here we just use xrandr to put brightness to 0, even if it glows black
+static const char *brofflaptop[] = { "xrandr", "--output", "eDP", "--brightness", "0", NULL};
+static const char *bronlaptop[] = { "xrandr", "--output", "eDP", "--brightness", "1", NULL};
+
+static const char *broffmonitor[] = { "xrandr", "--output", "HDMI-A-0", "--brightness", "0", NULL};
+static const char *bronmonitor[] = { "xrandr", "--output", "HDMI-A-0", "--brightness", "1", NULL};
+
+
 #include "movestack.c"
 
 //XK_Right, XK_Left for arrow keys right and left
@@ -138,6 +148,10 @@ static const Key keys[] = {
 	{ MODKEY,						XK_F6,     spawn,          {.v = suspendcmd } },
 	{ MODKEY,						XK_F7,     spawn,          {.v = keyboardbrtogcmd } },
 	{ MODKEY,						XK_F8,     spawn,          {.v = opactogglecmd } },
+	{ MODKEY,						XK_F9,	   spawn,		   {.v = brofflaptop } },
+	{ MODKEY|ShiftMask,				XK_F9,	   spawn,		   {.v = bronlaptop } },
+	{ MODKEY,						XK_F10,	   spawn,		   {.v = broffmonitor } },
+	{ MODKEY|ShiftMask,				XK_F10,	   spawn,		   {.v = bronmonitor } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
