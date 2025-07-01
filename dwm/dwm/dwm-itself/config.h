@@ -83,6 +83,10 @@ static const char *broffcmd[] = { "xset", "dpms", "force", "suspend", NULL };
 static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 
 //this is a custom script present in /usr/local/bin
+//the script may need elevated permissions to run... it alters the file /sys/class/leds/asus::kbd_backlight/brightness so check those permissions
+//usually that file will belong to the input group so make sure the user is in that group
+//if needed we can add a udev rule to /etc/udev/rules.d/ with the command "ACTION=="add", SUBSYSTEM=="leds", KERNEL=="asus::kbd_backlight", MODE="0664", GROUP="input"
+//to make that brightness file belong to the user group. It needs to be a udev rule since /sys/ is the virtual file system and chmod changes will not stay after a reboot
 static const char *keyboardbrtogcmd[] = { "keyboard-brightness-toggle", NULL };
 
 //Opacity
