@@ -152,10 +152,10 @@ static const Key keys[] = {
 	{ MODKEY,						XK_F6,     spawn,          {.v = suspendcmd } },
 	{ MODKEY,						XK_F7,     spawn,          {.v = keyboardbrtogcmd } },
 	{ MODKEY,						XK_F8,     spawn,          {.v = opactogglecmd } },
-	{ MODKEY,						XK_F9,	   spawn,		   {.v = brofflaptop } },
-	{ MODKEY|ShiftMask,				XK_F9,	   spawn,		   {.v = bronlaptop } },
-	{ MODKEY,						XK_F10,	   spawn,		   {.v = broffmonitor } },
-	{ MODKEY|ShiftMask,				XK_F10,	   spawn,		   {.v = bronmonitor } },
+	{ MODKEY|ShiftMask,				XK_F9,	   spawn,		   {.v = brofflaptop } },
+	{ MODKEY,						XK_F9,	   spawn,		   {.v = bronlaptop } },
+	{ MODKEY|ShiftMask,				XK_F10,	   spawn,		   {.v = broffmonitor } },
+	{ MODKEY,						XK_F10,	   spawn,		   {.v = bronmonitor } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
