@@ -101,6 +101,7 @@ static const char *bronlaptop[] = { "xrandr", "--output", "eDP", "--brightness",
 static const char *broffmonitor[] = { "xrandr", "--output", "HDMI-A-0", "--brightness", "0", NULL};
 static const char *bronmonitor[] = { "xrandr", "--output", "HDMI-A-0", "--brightness", "1", NULL};
 
+static const char *btopcmd[] = { "konsole", "-e", "btop", "--debug", NULL };
 
 #include "movestack.c"
 
@@ -139,7 +140,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_plus,   setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = 60  } },
-	{ MODKEY|ShiftMask,				XK_minus,  setgaps,	   {.i = -60 } },
+	{ MODKEY|ShiftMask,				XK_minus,  setgaps,	   	   {.i = -60 } },
 	{ MODKEY,						XK_F1,     spawn,          {.v = mutecmd } },
 	{ MODKEY,						XK_F1,     spawn,          {.v = updatevol } },
 	{ MODKEY,						XK_F2,     spawn,          {.v = voldowncmd } },
@@ -156,6 +157,7 @@ static const Key keys[] = {
 	{ MODKEY,						XK_F9,	   spawn,		   {.v = bronlaptop } },
 	{ MODKEY|ShiftMask,				XK_F10,	   spawn,		   {.v = broffmonitor } },
 	{ MODKEY,						XK_F10,	   spawn,		   {.v = bronmonitor } },
+	{ MODKEY,						XK_F11,	   spawn,		   {.v = btopcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
