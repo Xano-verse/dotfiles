@@ -6,4 +6,5 @@ picom --animations -b
 export PATH=/home/xanodeb/dwm/dwmblocks/statusbar_scripts:$PATH
 dwmblocks &
 xrandr --output HDMI-A-0 --auto --left-of eDP
+xrandr --output HDMI-A-0 --brightness 1
 

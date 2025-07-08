@@ -245,6 +245,9 @@ static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void zoom(const Arg *arg);
 static void centeredmaster(Monitor *m);
 static void centeredfloatingmaster(Monitor *m);
+// funcoes auxiliares minhas
+static void set_brightness_monitor(const Arg* arg);
+
 
 /* variables */
 static const char autostartblocksh[] = "autostart_blocking.sh";
@@ -2638,3 +2641,50 @@ centeredfloatingmaster(Monitor *m)
 		tx += WIDTH(c);
 	}
 }
+
+
+
+
+// Made by me, manually
+// Command to read current brightness on the monitor and increment/decrement it
+// (demasiado complexo para ficar no config.h)
+
+// dwm expects void (*func)(const Arg *) for keybind functions
+void set_brightness_monitor(const Arg* arg) {
+	char brightness_value[16];
+	char brightness_command[BUFSIZ];
+
+	// Convert the received value to a string
+	snprintf(brightness_value, sizeof(brightness_value), "%.2f", arg->f);
+
+	// Insert the given value into the command
+	// (if it doesnt work first thing is to see how we're reading the current  brightness, maybe aumentar o -A no grep ou o field de brightness tem outro nome idk)
+	snprintf(brightness_command, sizeof(brightness_command),
+			"p=$(xrandr --verbose | grep 'HDMI-A-0' -A 10 | awk '/Brightness/ { print $2; exit }') && new_p=$(echo \"$p + %s\" | bc) && xrandr --output HDMI-A-0 --brightness $new_p",
+			brightness_value);
+
+	// also, we do $(echo "$p - 0.5" | bc) to define the new p because the normal POSIX shell doesnt handle floats, only integers
+
+
+	// The full command is
+	// p=$(xrandr --verbose | grep 'HDMI-A-0' -A 5 | awk '/Brightness/ { print $2; exit }') && new_p=$(echo "$p + 0.5" | bc) && xrandr --output HDMI-A-0 --brightness $new_p
+	
+	// but to use execvp we need to use /bin/sh -c <command>. Also, we NEED to use single quotes on the HDMI-A-0 if we use /bin/sh.
+	char *final_cmd[] = { "/bin/sh", "-c", brightness_command, NULL };
+	
+
+	// We need to create a child process to execute the xrandr command in otherwise it would kill the dwm process and replace it
+	if (fork() == 0) {
+		// In the child process (returned pid is 0) we execute the command
+		// First argument is the program name, in this case xrandr, and the second is the program arguments (where we need to say xrandr again)
+		execvp(final_cmd[0], final_cmd);
+
+		// execvp only returns if there's an error
+		perror("execvp for xrandr (monitor brightness) failed");
+		exit(1);
+	}
+
+}
+
+
+

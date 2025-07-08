@@ -78,6 +78,11 @@ static const char *updatevol[] = { "pkill", "-RTMIN+10", "dwmblocks", NULL };
 //Brightness
 static const char *brdowncmd[] = { "light", "-U", "5", NULL };
 static const char *brupcmd[] = { "light", "-A", "5", NULL };
+
+//double monitorbr = 1;
+//static const char *brdownmonitor[] = { "xrandr", "--output", "HDMI-A-0", "--brightness", monitorbr-0.2, NULL};
+//static const char *brupmonitor[] = { "xrandr", "--output", "HDMI-A-0", "--brightness", monitorbr+0.2, NULL};
+
 static const char *broffcmd[] = { "xset", "dpms", "force", "suspend", NULL };
 
 static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
@@ -102,6 +107,8 @@ static const char *broffmonitor[] = { "xrandr", "--output", "HDMI-A-0", "--brigh
 static const char *bronmonitor[] = { "xrandr", "--output", "HDMI-A-0", "--brightness", "1", NULL};
 
 static const char *btopcmd[] = { "konsole", "-e", "btop", "--debug", NULL };
+
+
 
 #include "movestack.c"
 
@@ -149,6 +156,8 @@ static const Key keys[] = {
 	{ MODKEY,						XK_F3,     spawn,          {.v = updatevol } },
 	{ MODKEY,						XK_F4,     spawn,          {.v = brdowncmd } },
 	{ MODKEY,						XK_F5,     spawn,          {.v = brupcmd } },
+	{ MODKEY|ShiftMask,				XK_F4, set_brightness_monitor, {.f = -0.1 } },
+	{ MODKEY|ShiftMask,				XK_F5, set_brightness_monitor, {.f = 0.1 } },
 	{ NULL,							XK_F6,     spawn,          {.v = broffcmd } },
 	{ MODKEY,						XK_F6,     spawn,          {.v = suspendcmd } },
 	{ MODKEY,						XK_F7,     spawn,          {.v = keyboardbrtogcmd } },
