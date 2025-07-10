@@ -1,0 +1,16 @@
+# Config file for yt-dlp. Lines with hash symbol are comments
+
+# 720p video quality in mp4 format plus m4a audio
+#-f 609+140
+
+# Select best video only quality up to 720p and mp4 format and best audio only quality with m4a format
+-f "bv[height<=720][ext=mp4]+ba[ext=m4a]"
+
+# Embed thumbnail and convert it to png (bcus in case we get a webm one it wont embed)
+--embed-thumbnail
+--convert-thumbnails png
+
+# Select english subtitles and embed
+--sub-langs en
+--embed-subs
+
