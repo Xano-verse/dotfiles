@@ -98,7 +98,7 @@ static const char *keyboardbrtogcmd[] = { "keyboard-brightness-toggle", NULL };
 static const char *opactogglecmd[] = { "picom-trans", "-c", "-t", NULL};  
 
 //Turn off brightness - monitor specific
-// xset dpms always applie to all displays, for display specific solutions we need other tools. Due to hardware/driver specifications of my current devices neither the external monitor (via ddcutil) or the laptop screen (via light command) can completely turn off the backlight
+// xset dpms always apply to all displays, for display specific solutions we need other tools. Due to hardware/driver specifications of my current devices neither the external monitor (via ddcutil) or the laptop screen (via light command) can completely turn off the backlight
 //So here we just use xrandr to put brightness to 0, even if it glows black
 static const char *brofflaptop[] = { "xrandr", "--output", "eDP", "--brightness", "0", NULL};
 static const char *bronlaptop[] = { "xrandr", "--output", "eDP", "--brightness", "1", NULL};
@@ -108,7 +108,10 @@ static const char *bronmonitor[] = { "xrandr", "--output", "HDMI-A-0", "--bright
 
 static const char *btopcmd[] = { "konsole", "-e", "btop", "--debug", NULL };
 
-
+//Lock the screen with slock
+static const char *slockcmd[] = { "slock", NULL };
+//Lock the screen with slock and then suspend pc
+static const char *slocksuspendcmd[] = { "konsole", "-e", "slock", "systemctl", "suspend", NULL};
 
 #include "movestack.c"
 
@@ -167,6 +170,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,				XK_F10,	   spawn,		   {.v = broffmonitor } },
 	{ MODKEY,						XK_F10,	   spawn,		   {.v = bronmonitor } },
 	{ MODKEY,						XK_F11,	   spawn,		   {.v = btopcmd } },
+	{ MODKEY,						XK_F12,    spawn,          {.v = slockcmd } },
+	{ MODKEY|ShiftMask,				XK_F12,    spawn,          {.v = slocksuspendcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
