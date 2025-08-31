@@ -1,0 +1,21 @@
+# Config file for yt-dlp. Lines with hash symbol are comments
+
+
+# Select best video only quality up to 720p and mp4 format and best audio only quality with m4a format
+-f "bv[height<=720][ext=mp4]+ba[ext=m4a] / bv[height<=720][ext=mp4]+ba[ext!=webm] / bv*[height<=720]+ba*"
+
+# ^^^
+# If m4a doesn't exist, use the best audio-only that isn't .webm (it would mess with thumbnail embedding otherwise)
+# If there is only .webm, then use whatever best video (up to 720p) and audio format there is (even if they're in the same stream)
+# (the thumbnail embedding will force it to convert from .webm either way, probably into .mkv)
+
+
+
+# Embed thumbnail and convert it to png (bcus in case we get a webm one it wont embed)
+--embed-thumbnail
+--convert-thumbnails png
+
+
+# Select english subtitles and embed
+--sub-langs en
+--embed-subs
