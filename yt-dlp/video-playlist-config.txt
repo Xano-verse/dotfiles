@@ -20,7 +20,7 @@
 --sub-langs en
 --embed-subs
 
--o ./"%(title)s by %(uploader)s posted on %(upload_date>%d-%m-%Y)s.%(ext)s"
+-o ./"%(playlist)s by %(uploader)s"/"%(playlist_index)s. %(title)s by %(uploader)s posted on %(upload_date>%d-%m-%Y)s.%(ext)s"
 
 
 

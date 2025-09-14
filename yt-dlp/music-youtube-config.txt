@@ -1,0 +1,29 @@
+# Config file for yt-dlp. Lines with hash symbol are comments
+# Works with youtube playlists (use youtube music (even tho it's not directly supported) because of the thumbnails) 
+
+
+# Embed thumbnail and convert it to png (bcus in case we get a webm one it wont embed)
+--embed-thumbnail
+--convert-thumbnails png
+
+# Crop the thumbnail to a square because youtube's thumbnails are rectangular
+--ppa "ThumbnailsConvertor+FFmpeg_o:-c:v mjpeg -qmin 1 -qscale:v 1 -vf crop=\"min(iw\,ih)\":\"min(iw\,ih)\"" 
+
+
+# Best audio only quality that isn't webm, else whatever format
+-f "ba[ext!=webm] / ba"
+
+# File name formatting as absolute path - ./Album name by Artist (Year)/00. Track name
+-o ./"%(playlist)s by %(uploader)s (%(release_year)s)"/"%(playlist_index)s. %(title)s.%(ext)s"
+
+
+# If some videos are from different uploaders and those uploaders don't matter, use playlist_uploader instead vvvv
+#-o ./"%(playlist)s by %(playlist_uploader)s (%(release_year)s)"/"%(playlist_index)s. %(title)s.%(ext)s"
+
+# However, if each different uploader matters do vvvv
+#-o ./"%(playlist)s by %(playlist_uploader)s (%(release_year)s)"/"%(playlist_index)s. %(title)s by %(uploader)s.%(ext)s"
+
+
+# Use the remove-album-from-names.sh script to remove the "Album - " part of each folder
+
+

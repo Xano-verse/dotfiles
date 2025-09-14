@@ -1,0 +1,21 @@
+# Config file for yt-dlp. Lines with hash symbol are comments
+# Works with soundcloud
+# CUIDADO COM O SOUNDCLOUD!! ha alguns tracks q são premium entao vao descarregar só o inicio, e mal dá para nos apercebermos
+
+
+# Embed thumbnail and convert it to png (bcus in case we get a webm one it wont embed)
+--embed-thumbnail
+--convert-thumbnails png
+
+# Best audio only quality that isn't webm, else whatever format
+-f "ba[ext!=webm] / ba"
+
+# File name formatting as absolute path - ./Album name by Artist (Year)/00. Track name
+-o ./"%(playlist)s by %(uploader)s (%(release_year)s)"/"%(playlist_index)s. %(title)s.%(ext)s"
+
+
+# If some videos are from different uploaders and those uploaders don't matter, use playlist_uploader instead vvvv
+#-o ./"%(playlist)s by %(playlist_uploader)s (%(release_year)s)"/"%(playlist_index)s. %(title)s.%(ext)s"
+
+# However, if each different uploader matters do vvvv
+#-o ./"%(playlist)s by %(playlist_uploader)s (%(release_year)s)"/"%(playlist_index)s. %(title)s by %(uploader)s.%(ext)s"

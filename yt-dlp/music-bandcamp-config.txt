@@ -1,7 +1,9 @@
 # Config file for yt-dlp. Lines with hash symbol are comments
 # Doesn't work well for playlists, only for albums!!! (Files will be sorted into folders according to their album)
 # Bandcamp works well with this config
-# Soundcloud usually messes up the numbering and the release year
+# Soundcloud usually messes up the numbering and the release year with THIS config particularly
+
+# Tal como no soundcloud, tb há tracks premium no bandcamp, mas estes dão um erro e não descarregam no yt-dlp, enquanto que o soundcloud descarrega só o início e não se dá conta. Ter atenção either way!! 
 
 # Embed thumbnail and convert it to png (bcus in case we get a webm one it wont embed)
 --embed-thumbnail
@@ -11,7 +13,7 @@
 -f "ba[ext!=webm] / ba"
 
 # File name formatting as absolute path - ./Album name by Artists (Year)/00. Track name
--o ./"%(album)s by %(artist)s (%(release_year)s)"/"0%(track_number)s. %(track)s.%(ext)s"
+-o ./"%(album)s by %(artist)s (%(release_year)s)"/"%(playlist_index)s. %(track)s.%(ext)s"
 
 # If there are multiple artists, remove from the path, add it manually vvvv
-#-o ./"%(album)s by (%(release_year)s)"/"0%(track_number)s. %(track)s.%(ext)s"
+#-o ./"%(album)s by (%(release_year)s)"/"%(playlist_index)s. %(track)s.%(ext)s"
