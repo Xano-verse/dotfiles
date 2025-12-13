@@ -5,6 +5,11 @@
 ![](dwm/dwm_1.png)
 ![](dwm/dwm_1_justwallpaper.png) 
 
+
+#### Goodbye dwm and Debian
+
+![](dwm/dwm_goodbye-debian.png)
+
 ‎ 
 ‎ 
 

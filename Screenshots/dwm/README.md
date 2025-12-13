@@ -12,3 +12,9 @@
 
 ![](dwm_floaty_tree.png)
 
+---
+
+#### Goodbye dwm and Debian
+
+![](dwm_goodbye-debian.png)
+
