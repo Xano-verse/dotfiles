@@ -18,3 +18,5 @@
 
 ![](dwm_goodbye-debian.png)
 
+![](dwm_another-layout.png)
+
