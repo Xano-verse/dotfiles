@@ -13,6 +13,10 @@ imap <C-BS> <C-W>
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+
 set foldmethod=syntax
 set foldlevel=999
 
@@ -21,8 +25,15 @@ set shiftwidth=4
 
 call plug#begin()
 
+" Plugins are installed from Github
 Plug 'henry-hsieh/riscv-asm-vim'
 Plug 'jez/vim-superman' 
 Plug 'KabbAmine/vCoolor.vim'
+Plug 'jamessan/vim-gnupg'
+
+" Disable vCoolor mappings porque estava a interferir com o inserir o ã
+let g:vcoolor_disable_mappings = 1
 
 call plug#end()
+
+
