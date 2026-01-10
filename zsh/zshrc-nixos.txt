@@ -41,6 +41,8 @@ eval $(dircolors ~/.config/dircolors.txt)
 	#distrofetch
 #fi
 
+neofetch
+
 #################################################################
 #Script to set starting path
 ROXO='[35m'
