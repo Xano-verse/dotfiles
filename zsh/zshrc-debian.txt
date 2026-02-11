@@ -44,6 +44,7 @@ echo "1 - Home"
 echo "2 - University"
 echo "3 - Work"
 echo "4 - Projects"
+echo "5 - Drive"
 read where
 
 
@@ -53,7 +54,7 @@ then
 
 elif [ $where -eq 2 ]
 then
-	cd ~/Documents/Ano\ Letivo\ 2024-25/2o\ Semestre/
+	cd ~/Documents/Ano\ Letivo\ 2025-26/1o\ Semestre/
 
 elif [ $where -eq 3 ]
 then
@@ -61,7 +62,11 @@ then
 
 elif [ $where -eq 4 ]
 then
-	cd ~/Documents/SideQuests/MyProjects/
+	cd ~/Documents/Pessoal/MyProjects/
+
+elif [ $where -eq 5 ]
+then
+	cd /media/xanodeb/Seagate
 
 fi
 #################################################################
@@ -76,9 +81,25 @@ alias fzf='fzf --preview "batcat --color=always --style=numbers --line-range=:50
 # Use qb for qutebrowser
 alias qb='qutebrowser &;disown'
 
+# Open a konsole terminal in the same path and disown it
+alias k='konsole &;disown'
+
+# Sleep for 5 seconds and only then launch flameshot, já no modo de capturar -> útil em window managers para mudar de janela e pôr o focus na que queremos
+alias fshot='sleep 5; flameshot gui'
+
 # Function to act as a command to open vim in a new terminal. Add "exec zsh" if after disown; to make it not kill the terminal after exiting vim
 vimn() {
 	konsole -e vim $1&;disown
+}
+
+# Function to serve as an alias to zathura and automatically disown
+z() {
+	zathura $1&;disown
+}
+
+# Fuzzy find all files to include hidden files in search (os .cache são irritantes afterall por isso vou preservar o comando fzf normal)
+fzfa() {
+	find . | fzf -e -q "$1"
 }
 
 
@@ -221,3 +242,11 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+
+# For gpg/vim-gpg plugin
+GPG_TTY=`tty`
+export GPG_TTY
+
+
+
