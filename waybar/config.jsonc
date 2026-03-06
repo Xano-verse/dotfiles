@@ -1,0 +1,102 @@
+// This config only defines the modules, the styling is done with the .css files
+{
+    "layer": "top",
+
+    "modules-left": ["niri/workspaces", "sway/mode"],
+
+    "modules-center": ["clock"],
+
+    "modules-right": ["privacy", "cpu", "memory", "network", "bluetooth", "wireplumber", "battery"],
+
+
+
+    // Tooltip format is the textbox that shows up when you hover the module with your mouse
+
+
+
+    "clock": {
+        "format": "{:%a, %d. %b %Y  %H:%M}",
+	"tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+	}
+
+    },
+
+    //The privacy module displays if any application is capturing audio, sharing the screen or playing audio.    
+    "privacy": {
+	"icon-spacing": 4,
+	"icon-size": 18,
+	"transition-duration": 250,
+	"modules": [
+	    {
+		"type": "screenshare",
+		"tooltip": true,
+		"tooltip-icon-size": 24
+	    },
+	    {
+		"type": "audio-in",		// when it's capturing audio
+		"tooltip": true,
+		"tooltip-icon-size": 24
+	    }
+	]
+    },
+
+    "cpu": {
+	"interval": 10,
+	"format": "{usage}% ",
+	"max-length": 10
+    },
+
+    "memory": {
+	"interval": 30,
+	"format": "󰍛 {used}/{total}GiB",
+	"tooltip": true,
+	"tooltip-format": "{avail} GiB available"
+    },
+
+    "network": {
+	"interface": "wlp2s0",
+	"format": "{ifname}",
+	"format-wifi": "{essid} ({signalStrength}%) ",
+	"format-ethernet": "{ipaddr}/{cidr} 󰈁",
+	"tooltip-format": "{bandwidthDownBits} bits  | {bandwidthUpBits} bits "
+    },
+
+    "bluetooth": {
+	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	"format": "{status} 󰂯",
+	"format-connected": "{num_connections} connected 󰂯",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+
+    "wireplumber": {
+	"format": "{volume}% {icon}",
+	"format-muted": "",
+	"format-icons": ["", ""]
+    },
+
+
+    "battery": {
+        "format": "{capacity}% {icon}",
+	"format-icons": ["󱟢"]
+        //"format-icons": ["", "", "", "", ""]
+    }
+
+
+
+
+
+}
