@@ -106,6 +106,11 @@ input {
     position x=1280 y=0
 }
 
+
+
+spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers-Rotating/city-sea-stars.png"
+spawn-sh-at-startup "wal -i ~/Pictures/Wallpapers-Rotating/city-sea-stars.png"
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
@@ -120,6 +125,8 @@ layout {
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
     center-focused-column "never"
+    
+
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -167,13 +174,13 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#6b6b6ba6"
 
         // Color of the ring on inactive monitors.
         //
         // The focus ring only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
-        inactive-color "#505050"
+        inactive-color "#50505000"  // last two 0s are making it completely invisible on purpose
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -189,6 +196,7 @@ layout {
         // To do that, set relative-to="workspace-view".
         //
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+
     }
 
     // You can also add a border. It's similar to the focus ring, but always visible.
@@ -261,6 +269,16 @@ layout {
         // bottom 64
     }
 }
+
+
+// Do $ niri msgs layers to see available layers to put in the namespace
+/*
+layer-rule {
+    match namespace=""
+    
+    opacity 0.80
+}
+*/
 
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
@@ -341,9 +359,12 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
+// Window rule for all windows
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+
+    opacity 0.85
 }
 
 binds {
@@ -392,6 +413,7 @@ binds {
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
     // but you need to manually put each argument in separate "" quotes.
+    // This is F4 and F5 (may need  to combine with Fn key)
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
@@ -662,4 +684,6 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+
 }
