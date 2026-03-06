@@ -18,6 +18,9 @@ bindkey '5~' kill-word
 #apply dircolors changes to the ls command
 eval $(dircolors ~/.config/dircolors.txt)
 
+
+(cat ~/.cache/wal/sequences &)
+
 #Add folders with binaries to $PATH
 #add rust/cargo programs to $PATH
 #path+=('/home/xanodeb/.cargo/bin')
