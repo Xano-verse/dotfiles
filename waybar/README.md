@@ -7,3 +7,13 @@ config.jsonc has the "technical" side of the configuration (like which modules a
 
 in the style.css we can import other .css files, so for example if we want to use pywal to generate a colorscheme based on the wallpaper, we can import the colorscheme from ~/.cache/wal/colors-waybar.css (pywal generates a file already meant for waybar) and then use the colors with @color1
 
+
+
+the round shape outside each module is achieved through
+border-radius: 20px;
+and
+border: 2px solid @color;
+
+we could make it filled by, instead of the border: field, we put a background-color:
+
+

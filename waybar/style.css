@@ -35,6 +35,10 @@ tooltip label {
     border-bottom: 3px solid white;
 }
 
+#window {
+    margin: 0 10px;
+    color: @foreground;
+}
 
 /* border-radius: 20px is what creates a circular shape rather than a rectangular */
 /* padding is the space inside each module, vertically and then horizontally */

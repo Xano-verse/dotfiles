@@ -16,7 +16,7 @@
     // The display of the currently focussed window name
     "niri/window": {
 	"format": "{app_id}: {title}",
-	"seperate-outputs": true,
+	"separate-outputs": true,
 	"rewrite": {
 		"org.kde.konsole: (.*)": "  [$1]",
 		"firefox: (.*)": "󰈹  [$1]",
