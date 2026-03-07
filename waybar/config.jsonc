@@ -2,7 +2,7 @@
 {
     "layer": "top",
 
-    "modules-left": ["niri/workspaces", "sway/mode"],
+    "modules-left": ["niri/workspaces", "niri/window"],
 
     "modules-center": ["clock"],
 
@@ -12,6 +12,21 @@
 
     // Tooltip format is the textbox that shows up when you hover the module with your mouse
 
+
+    // The display of the currently focussed window name
+    "niri/window": {
+	"format": "{app_id}: {title}",
+	"seperate-outputs": true,
+	"rewrite": {
+		"org.kde.konsole: (.*)": "  [$1]",
+		"firefox: (.*)": "󰈹  [$1]",
+		"org.pwmt.zathura: (.*)": "󰈙  [$1]",
+		"org.kde.dolphin: (.*)": "  [$1]",
+		"org.kde.gwenview: (.*)": "  [$1]",
+		"org.kde.okular: (.*)": "󰈙  [$1]",
+		"mpv: (.*)": "  [$1]"
+	}
+    },
 
 
     "clock": {
@@ -54,13 +69,13 @@
 
     "cpu": {
 	"interval": 10,
-	"format": "{usage}% ",
+	"format": "{usage}% ",
 	"max-length": 10
     },
 
     "memory": {
 	"interval": 30,
-	"format": "󰍛 {used}/{total}GiB",
+	"format": "{used}/{total}GiB ",
 	"tooltip": true,
 	"tooltip-format": "{avail} GiB available"
     },

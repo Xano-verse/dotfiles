@@ -4,7 +4,7 @@
     border: none;
     border-radius: 0;
     font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     min-height: 0;
 }
 
@@ -20,23 +20,29 @@ tooltip {
   border: 1px solid rgba(100, 114, 125, 0.5);
 }
 tooltip label {
-  color: white;
+  color: @foreground;
 }
 
 #workspaces button {
     padding: 0 5px;
     background: transparent;
-    color: white;
+    color: @foreground;
     border-bottom: 3px solid transparent;
 }
 
 #workspaces button.focused {
-    background: #64727D;
+    background: @color1;
     border-bottom: 3px solid white;
 }
 
-#mode, #clock, #battery {
-    padding: 0 10px;
+
+/* border-radius: 20px is what creates a circular shape rather than a rectangular */
+/* padding is the space inside each module, vertically and then horizontally */
+/* margin is the outer padding, the space between each module */
+#mode, #clock, #battery, #wireplumber, #bluetooth, #network, #memory, #cpu, #privacy {
+    padding: 0 20px;
+    border-radius: 20px;
+    margin: 0px 3px;
 }
 
 #mode {
@@ -44,16 +50,15 @@ tooltip label {
     border-bottom: 3px solid white;
 }
 
-/* border-radius: 20px is what creates a circular shape rather than a rectangular */
 #clock {
     background-color: @color1;
     border-radius: 20px;
 }
 
 #battery {
-    background-color: @color2;
-    color: black;
-    border-radius: 20px;
+    color: @color3;
+    background-color: transparent;
+    border: 2px solid @color3;
 }
 
 #battery.charging {
@@ -78,15 +83,34 @@ tooltip label {
     animation-direction: alternate;
 }
 
-#pulseaudio-slider {
-    padding: 0;
-    margin: 0;
+#wireplumber {
+    color: @color3;
+    background-color: transparent;
+    border: 2px solid @color3;
 }
-#pulseaudio-slider slider {
-    min-height: 0px;
-    min-width: 10px;
-    opacity: 1;
-    background-image: none;
-    border: none;
-    box-shadow: none;
+
+#bluetooth {
+    color: @color2;
+    background-color: transparent;
+    border: 2px solid @color2;
 }
+
+#network {
+    color: @color2;
+    background-color: transparent;
+    border: 2px solid @color2;
+}
+
+#memory {
+    color: @color8;
+    background-color: transparent;
+    border: 2px solid @color8;
+}
+
+#cpu {
+    color: @color8;
+    background-color: transparent;
+    border: 2px solid @color8;
+}
+
+
