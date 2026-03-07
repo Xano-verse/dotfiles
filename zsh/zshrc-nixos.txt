@@ -90,17 +90,21 @@ eval $(dircolors ~/.config/dircolors.txt)
 
 #neofetch
 
-LOGO_ART_FOLDER=./ansi-art
+LOGO_ART_FOLDER=/home/xanix/ansi-art
 LOGO_ART=$(ls $LOGO_ART_FOLDER | shuf -n 1)
 echo $LOGO_ART
 
 
-if [ "$LOGO_ART" = "hoopa-unbound.txt" ] || [ "$LOGO_ART" = "hoopa.txt" ]; then
+if [ "$LOGO_ART" = "hoopa-unbound.txt" ] || [ "$LOGO_ART" = "hoopa.txt" ] || [ "$LOGO_ART" = "portal-purple.txt" ]; then
     FETCH_COLOR="magenta"
-elif [ "$LOGO_ART" = "black-mage.txt" ]; then
+elif [ "$LOGO_ART" = "black-mage.txt" ] || [ "$LOGO_ART" = "portal-blue.txt" ]; then
     FETCH_COLOR="blue"
 elif [ "$LOGO_ART" = "gallade.txt" ] || [ "$LOGO_ART" = "gallade-mega.txt" ]; then
     FETCH_COLOR="cyan"
+elif [ "$LOGO_ART" = "portal-red.txt" ]; then
+    FETCH_COLOR="red"
+elif [ "$LOGO_ART" = "portal-green.txt" ]; then
+    FETCH_COLOR="green"
 else
     FETCH_COLOR="black"
 fi
