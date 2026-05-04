@@ -21,6 +21,6 @@ the terminal colors are each terminal's/shell responsability to use pywal, not n
 in this case, the saved pywal colorschemes are being called through .zshrc
 
 niri chooses the terminal with the Mod+Return command, where it's chosen in the spawn command
-(currently, enter launches alacritty and shift enter launches konsole)
+(currently, enter launches konsole and shift enter launches alacritty, because konsole doesn't apply pywal to the actual terminal colors and most colorschemes are way too dark and with colors too similar so preserving a default colorscheme is actually better)
 
 
