@@ -121,6 +121,7 @@ input {
 
 spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers-Rotating/approved/revachol.jpg"
 spawn-sh-at-startup "wal -i ~/Pictures/Wallpapers-Rotating/approved/revachol.jpg"
+spawn-sh-at-startup "cp ~/.cache/wal/colors-rofi-dark.rasi ~/.config/rofi/config.rasi"
 
 // ===========================================================================================
 
