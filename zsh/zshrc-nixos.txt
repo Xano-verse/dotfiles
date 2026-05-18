@@ -6,6 +6,8 @@
 #  rebuilds so maybe delete all of them once in a while)		  			  	  #
 #  feel free to delete all of them, no need to leave one generated config	  	  #
 #  because everytime NixOS pulls the zshrc generates these lines regardless  	  #
+#  -> also too many stacked auto-generated configs will probably impact			  #
+#  zsh startup time																  #
 ###################################################################################
 #									     	  									  # 
 ###################################################################################
