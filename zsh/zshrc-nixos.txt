@@ -123,9 +123,10 @@ alias qb='qutebrowser &;disown'
 # Make vscode work on wayland
 alias codew='code --ozone-platform=wayland'
 
-# Function to act as a command to open vim in a new terminal. Add "exec zsh" if after disown; to make it not kill the terminal after exiting vim
+# Function to act as a command to open vim in a new terminal. 
+# both stdout and stderr are being re-directed to /dev/null, remove this to debug any issues
 vimn() {
-	konsole -e vim $1&;disown
+	konsole -e vim $1 &> /dev/null &;disown;exec zsh
 }
 
 # Function to serve as an alias to zathura and automatically disown
@@ -134,8 +135,9 @@ z() {
 }
 
 # Function to serve as an alias to launching another konsole terminal in the same directory
+# both stdout and stderr are being re-directed to /dev/null, remove this to debug any issues
 k() {
-	konsole&; disown
+	konsole &> /dev/null &; disown
 }
 
 
@@ -187,7 +189,5 @@ man() {
 # if you see an error saying /nix/store/ smth smth zsh syntax highlighting file not found
 # deve ser destas linhas below estarem a mais
 ######################################################################################
-
-
 
 
