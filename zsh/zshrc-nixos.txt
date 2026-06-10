@@ -132,7 +132,7 @@ alias codew='code --ozone-platform=wayland'
 # Function to act as a command to open vim in a new terminal. 
 # both stdout and stderr are being discarded (by re-directing to /dev/null), remove this to debug any issues
 vimn() {
-	konsole -e vim $1 &> /dev/null &;disown;exec zsh
+	konsole -e vim $1 &> /dev/null &; disown
 }
 
 # Function to serve as an alias to zathura and automatically disown
