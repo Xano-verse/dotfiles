@@ -88,22 +88,26 @@ echo "1 - Home"
 echo "2 - University"
 echo "3 - Work"
 echo "4 - Projects"
-read where
+echo "(anything else - stay in current path)"
+echo ""
+read where 
 
 
-if [ $where -eq 1 ]
+# o &> /dev/null é para redirecionar erros para nada, caso se carregue algo que não esteja nas opções ou enter, para não dar print de erros
+
+if [ $where -eq 1 &> /dev/null ]
 then
 	cd ~/
 
-elif [ $where -eq 2 ]
+elif [ $where -eq 2 &> /dev/null ]
 then
 	cd ~/Documents/Ano\ Letivo\ 2024-25/2o\ Semestre/
 
-elif [ $where -eq 3 ]
+elif [ $where -eq 3 &> /dev/null ]
 then
 	cd ~/Documents/SideQuests/HappyCode/
 
-elif [ $where -eq 4 ]
+elif [ $where -eq 4 &> /dev/null ]
 then
 	cd ~/Documents/SideQuests/MyProjects/
 
@@ -123,6 +127,8 @@ alias qb='qutebrowser &;disown'
 # Make vscode work on wayland
 alias codew='code --ozone-platform=wayland'
 
+# These functions serve as aliases that can take arguments
+
 # Function to act as a command to open vim in a new terminal. 
 # both stdout and stderr are being discarded (by re-directing to /dev/null), remove this to debug any issues
 vimn() {
@@ -136,8 +142,22 @@ z() {
 
 # Function to serve as an alias to launching another konsole terminal in the same directory
 # both stdout and stderr are being discarded (by re-directing to /dev/null), remove this to debug any issues
+# Faz-se konsole com zsh e não só konsole para caso estarmos num environment de nix develop ou nix-shell vir com zsh e não com bash
 k() {
-	konsole &> /dev/null &; disown
+	konsole -e zsh &> /dev/null &; disown
+}
+
+# unalias is needed because usually git has the alias g
+unalias g
+# Function to serve as an alias to launching gwenview
+# both stdout and stderr are being discarded (by re-directing to /dev/null), remove this to debug any issues
+g() {
+	gwenview $1&> /dev/null &; disown
+}
+
+# Function to serve as an alias to wl-copy (same as xclip but for wayland)
+wcp() {
+	wl-copy < $1
 }
 
 
