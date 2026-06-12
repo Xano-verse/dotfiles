@@ -307,7 +307,8 @@ spawn-at-startup "waybar"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+	// (the help tips for keybinds that appear on startup)
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
