@@ -63,7 +63,7 @@ if [ "$LOGO_ART" = "hoopa-unbound.txt" ] || [ "$LOGO_ART" = "hoopa.txt" ] || [ "
     FETCH_COLOR="magenta"
 
 elif [ "$LOGO_ART" = "black-mage.txt" ] || [ "$LOGO_ART" = "portal-blue.txt" ] || [ "$LOGO_ART" = "blastoise.txt" ] || \
-	 [ "$LOGO_ART" = "copland_OS.txt"] || [ "$LOGO_ART" = "kris-deltarune.txt" ] || [ "$LOGO_ART" = "empoleon.txt" ]; then
+	 [ "$LOGO_ART" = "copland_OS.txt" ] || [ "$LOGO_ART" = "kris-deltarune.txt" ] || [ "$LOGO_ART" = "empoleon.txt" ]; then
     FETCH_COLOR="blue"
 
 elif [ "$LOGO_ART" = "gallade.txt" ] || [ "$LOGO_ART" = "gallade-mega.txt" ]; then
