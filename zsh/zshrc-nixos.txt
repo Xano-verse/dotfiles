@@ -69,7 +69,8 @@ elif [ "$LOGO_ART" = "black-mage.txt" ] || [ "$LOGO_ART" = "portal-blue.txt" ] |
 elif [ "$LOGO_ART" = "gallade.txt" ] || [ "$LOGO_ART" = "gallade-mega.txt" ]; then
     FETCH_COLOR="cyan"
 
-elif [ "$LOGO_ART" = "portal-red.txt" ] || [ "$LOGO_ART" = "victini.txt" ] || [ "$LOGO_ART" = "deoxys.txt" ]; then
+elif [ "$LOGO_ART" = "portal-red.txt" ] || [ "$LOGO_ART" = "victini.txt" ] || [ "$LOGO_ART" = "deoxys.txt" ] || \
+	 [ "$LOGO_ART" = "blaziken.txt" ]; then
     FETCH_COLOR="red"
 
 elif [ "$LOGO_ART" = "portal-green.txt" ]; then
